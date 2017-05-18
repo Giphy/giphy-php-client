@@ -146,3 +146,4 @@ Class | Method | HTTP request | Description
  - [TrendingTag](docs/Model/TrendingTag.md)
  - [User](docs/Model/User.md)
 
+
