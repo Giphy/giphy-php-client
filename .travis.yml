@@ -2,6 +2,6 @@
 language: php
 # command to install dependencies
 install:
-  - compose install
+  - composer install
 # command to run tests
 script: ./vendor/bin/phpunit
