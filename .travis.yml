@@ -1,0 +1,7 @@
+# ref: https://docs.travis-ci.com/user/languages/php
+language: php
+# command to install dependencies
+install:
+  - compose install
+# command to run tests
+script: ./vendor/bin/phpunit
