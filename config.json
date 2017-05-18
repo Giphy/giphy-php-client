@@ -1,0 +1,11 @@
+{
+	"sortParamsByRequiredFlag": true,
+	"ensureUniqueParams": true,
+	"allowUnicodeIdentifiers": true,
+	"invokerPackage": "GPH",
+	"srcBasePath": "lib",
+	"packagePath": "GiphyClient",
+	"gitUserId": "giphy",
+	"gitRepoId": "giphy-php-client",
+	"artifactVersion": "1.0.0"
+}
