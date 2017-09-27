@@ -16,41 +16,17 @@ The **Giphy Core SDK** is a wrapper around [Giphy API](https://github.com/Giphy/
 PHP 5.4.0 and later
 
 ## Installation & Usage
-### Composer
 
-To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
+Installation:
 
-```
-{
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/giphy/giphy-php-client.git"
-    }
-  ],
-  "require": {
-    "giphy/giphy-php-client": "*@dev"
-  }
-}
+```bash
+composer require giphy/giphy-php-client
 ```
 
-Then run `composer install`
-
-### Manual Installation
-
-Download the files and include `autoload.php`:
+Usage:
 
 ```php
     require_once('/path/to/GiphyClient/autoload.php');
-```
-
-## Tests
-
-To run the unit tests:
-
-```
-composer install
-./vendor/bin/phpunit
 ```
 
 ## Getting Started
