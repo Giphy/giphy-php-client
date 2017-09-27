@@ -8,8 +8,8 @@
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
-    "license": "proprietary",
+    "homepage": "https://github.com/Giphy/giphy-php-client",
+    "license": "MPLv2",
     "authors": [
         {
             "name": "Swagger and contributors",
