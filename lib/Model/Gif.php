@@ -83,7 +83,8 @@ class Gif implements ArrayAccess
         'create_datetime' => 'string',
         'import_datetime' => 'string',
         'trending_datetime' => 'string',
-        'images' => '\GPH\Model\GifImages'
+        'images' => '\GPH\Model\GifImages',
+        'title'  => 'string'
     ];
 
     public static function swaggerTypes()
@@ -124,7 +125,8 @@ class Gif implements ArrayAccess
         'create_datetime' => 'create_datetime',
         'import_datetime' => 'import_datetime',
         'trending_datetime' => 'trending_datetime',
-        'images' => 'images'
+        'images' => 'images',
+        'title' => 'title'
     ];
 
 
@@ -161,7 +163,8 @@ class Gif implements ArrayAccess
         'create_datetime' => 'setCreateDatetime',
         'import_datetime' => 'setImportDatetime',
         'trending_datetime' => 'setTrendingDatetime',
-        'images' => 'setImages'
+        'images' => 'setImages',
+        'title' => 'setTitle'
     ];
 
 
@@ -198,7 +201,8 @@ class Gif implements ArrayAccess
         'create_datetime' => 'getCreateDatetime',
         'import_datetime' => 'getImportDatetime',
         'trending_datetime' => 'getTrendingDatetime',
-        'images' => 'getImages'
+        'images' => 'getImages',
+        'title' => 'getTitle'
     ];
 
     public static function attributeMap()
@@ -261,6 +265,7 @@ class Gif implements ArrayAccess
         $this->container['import_datetime'] = isset($data['import_datetime']) ? $data['import_datetime'] : null;
         $this->container['trending_datetime'] = isset($data['trending_datetime']) ? $data['trending_datetime'] : null;
         $this->container['images'] = isset($data['images']) ? $data['images'] : null;
+        $this->container['title'] = isset($data['title']) ? $data['title'] : null;
     }
 
     /**
@@ -896,6 +901,28 @@ class Gif implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets title
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title
+     * @param string $title
+     * @return string
+     */
+    public function setTitle($title)
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -954,5 +981,6 @@ class Gif implements ArrayAccess
         return json_encode(\GPH\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
+
 
 

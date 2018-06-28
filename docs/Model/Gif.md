@@ -32,7 +32,9 @@ Name | Type | Description | Notes
 **import_datetime** | **string** | The creation or upload date from this GIF&#39;s source. | [optional] 
 **trending_datetime** | **string** | The date on which this gif was marked trending, if applicable. | [optional] 
 **images** | [**\GPH\Model\GifImages**](GifImages.md) |  | [optional] 
+**title** | **string** | The title of GIF | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
 
