@@ -420,7 +420,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **gifsTrendingGet**
-> \GPH\Model\InlineResponse200 gifsTrendingGet($api_key, $limit, $rating, $fmt)
+> \GPH\Model\InlineResponse200 gifsTrendingGet($api_key, $limit, $offset, $rating, $fmt)
 
 Trending GIFs Endpoint
 
@@ -434,11 +434,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new GPH\Api\DefaultApi();
 $api_key = "dc6zaTOxFJmzC"; // string | Giphy API Key.
 $limit = 25; // int | The maximum number of records to return.
+$offset = 0; // int | An optional results offset. Defaults to 0.
 $rating = "g"; // string | Filters results by specified rating.
 $fmt = "json"; // string | Used to indicate the expected response format. Default is Json.
 
 try {
-    $result = $api_instance->gifsTrendingGet($api_key, $limit, $rating, $fmt);
+    $result = $api_instance->gifsTrendingGet($api_key, $limit, $offset, $rating, $fmt);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->gifsTrendingGet: ', $e->getMessage(), PHP_EOL;
@@ -675,4 +676,5 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 

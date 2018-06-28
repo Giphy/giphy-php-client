@@ -1055,14 +1055,15 @@ class DefaultApi
      *
      * @param string $api_key Giphy API Key. (required)
      * @param int $limit The maximum number of records to return. (optional, default to 25)
+     * @param int $offset An optional results offset. Defaults to 0. (optional, default to 0)
      * @param string $rating Filters results by specified rating. (optional)
      * @param string $fmt Used to indicate the expected response format. Default is Json. (optional, default to json)
      * @throws \GPH\ApiException on non-2xx response
      * @return \GPH\Model\InlineResponse200
      */
-    public function gifsTrendingGet($api_key, $limit = null, $rating = null, $fmt = null)
+    public function gifsTrendingGet($api_key, $limit = null, $offset = null, $rating = null, $fmt = null)
     {
-        list($response) = $this->gifsTrendingGetWithHttpInfo($api_key, $limit, $rating, $fmt);
+        list($response) = $this->gifsTrendingGetWithHttpInfo($api_key, $limit, $offset, $rating, $fmt);
         return $response;
     }
 
@@ -1073,12 +1074,13 @@ class DefaultApi
      *
      * @param string $api_key Giphy API Key. (required)
      * @param int $limit The maximum number of records to return. (optional, default to 25)
+     * @param int $offset An optional results offset. Defaults to 0. (optional, default to 0)
      * @param string $rating Filters results by specified rating. (optional)
      * @param string $fmt Used to indicate the expected response format. Default is Json. (optional, default to json)
      * @throws \GPH\ApiException on non-2xx response
      * @return array of \GPH\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function gifsTrendingGetWithHttpInfo($api_key, $limit = null, $rating = null, $fmt = null)
+    public function gifsTrendingGetWithHttpInfo($api_key, $limit = null, $offset = null, $rating = null, $fmt = null)
     {
         // verify the required parameter 'api_key' is set
         if ($api_key === null) {
@@ -1089,6 +1091,12 @@ class DefaultApi
         }
         if (!is_null($limit) && ($limit < 1)) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling DefaultApi.gifsTrendingGet, must be bigger than or equal to 1.');
+        }
+        if (!is_null($offset) && ($offset > 100)) {
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling DefaultApi.gifsTrendingGet, must be smaller than or equal to 100.');
+        }
+        if (!is_null($offset) && ($offset < 0)) {
+            throw new \InvalidArgumentException('invalid value for "$offset" when calling DefaultApi.gifsTrendingGet, must be bigger than or equal to 0.');
         }
 
         // parse inputs
@@ -1110,6 +1118,10 @@ class DefaultApi
         // query params
         if ($limit !== null) {
             $queryParams['limit'] = $this->apiClient->getSerializer()->toQueryValue($limit);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
         }
         // query params
         if ($rating !== null) {
@@ -1685,3 +1697,4 @@ class DefaultApi
         }
     }
 }
+
